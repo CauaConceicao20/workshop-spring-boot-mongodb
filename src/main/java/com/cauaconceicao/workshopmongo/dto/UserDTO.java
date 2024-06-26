@@ -1,12 +1,14 @@
 package com.cauaconceicao.workshopmongo.dto;
 
 import com.cauaconceicao.workshopmongo.domain.User;
+import org.springframework.data.annotation.Id;
 
 import java.io.Serializable;
 
 public class UserDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    @Id
     private String id;
     private String name;
     private String email;

@@ -1,4 +1,4 @@
-package com.cauaconceicao.workshopmongo.domain.resources;
+package com.cauaconceicao.workshopmongo.resources;
 
 import com.cauaconceicao.workshopmongo.domain.User;
 import com.cauaconceicao.workshopmongo.dto.UserDTO;
@@ -44,6 +44,17 @@ public class UserResource {
         URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{id}").buildAndExpand(user.getId()).toUri();
 
         return ResponseEntity.created(uri).build();
+    }
+
+
+    @PutMapping("/atualizaUser/{id}")
+    @Transactional
+    public ResponseEntity<Void> updateUser(@RequestBody UserDTO userDTO, @PathVariable String id) {
+        User user = userService.fromDTO(userDTO);
+        user.setId(id);
+        user = userService.update(user);
+        return ResponseEntity.noContent().build();
+
     }
 
     @DeleteMapping("/deletaUser/{id}")

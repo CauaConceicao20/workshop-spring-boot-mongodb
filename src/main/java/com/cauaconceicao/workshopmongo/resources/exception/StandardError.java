@@ -1,4 +1,4 @@
-package com.cauaconceicao.workshopmongo.domain.resources.exception;
+package com.cauaconceicao.workshopmongo.resources.exception;
 
 import java.io.Serializable;
 

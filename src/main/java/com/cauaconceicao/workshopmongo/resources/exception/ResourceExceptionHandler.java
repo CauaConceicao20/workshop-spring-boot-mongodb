@@ -1,4 +1,4 @@
-package com.cauaconceicao.workshopmongo.domain.resources.exception;
+package com.cauaconceicao.workshopmongo.resources.exception;
 
 import com.cauaconceicao.workshopmongo.service.exception.ObjectNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
