@@ -1,5 +1,6 @@
 package com.cauaconceicao.workshopmongo.resources;
 
+import com.cauaconceicao.workshopmongo.domain.Post;
 import com.cauaconceicao.workshopmongo.domain.User;
 import com.cauaconceicao.workshopmongo.dto.UserDTO;
 import com.cauaconceicao.workshopmongo.service.UserService;
@@ -63,5 +64,12 @@ public class UserResource {
 
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/retornaPosts/{id}")
+    public ResponseEntity<List<Post>> findPosts(@PathVariable String id) {
+        User user = userService.findById(id);
+        return ResponseEntity.ok().body(user.getPosts());
+    }
+
 
 }
